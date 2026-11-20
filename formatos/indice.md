@@ -2,21 +2,23 @@
 
 Índice de todos los formatos disponibles. Ver cada archivo para especificación completa.
 
-## Formatos Activos (F01–F11)
+## Formatos Activos (F01–F13)
 
-| Formato | Nombre | Inspiración | Mejor Para | Multiplicador |
-|---------|--------|-------------|-----------|---|
-| **F01** | Frase Nativa | Control | Referencia de comparación | — |
-| **F02** | Recordatorio Suave | Relaciones 2–3M vistas | Consejos empáticos | — |
-| **F03** | Texto Susurro | Bienestar 10M+ vistas | Listas cortas, intimidad | — |
-| **F04** | Amarillo Documental | Autoridad visual | Transformaciones | — |
-| **F05** | Editorial Verde + Imagen | Minimalismo | Conceptos fuertes | — |
-| **F06** | Un Tema, Un Retrato | Coaching | Transformaciones personales | — |
-| **F07** | Libreta Editorial | Creatividad | Rituales, intimidad | — |
-| **F08** | Carpeta + Post-it | Educativo lindo | Pasos, hábitos | — |
-| **F09** | Starter Pack | Meme/Colección | Conceptos visuales | — |
-| **F10** | Ficha de Dato | Educativo | Números, frecuencias | — |
-| **F11** | Historia en Serif | Histórico | Orígenes verificados | — |
+| Formato | Nombre | Inspiración | Mejor Para | Slides | Multiplicador |
+|---------|--------|-------------|-----------|--------|---|
+| **F01** | Frase Nativa | Control | Referencia de comparación | 5–7 | — |
+| **F02** | Recordatorio Suave | Relaciones 2–3M vistas | Consejos empáticos | 5–7 | — |
+| **F03** | Texto Susurro | Bienestar 10M+ vistas | Listas cortas, intimidad | 5–7 | — |
+| **F04** | Amarillo Documental | Autoridad visual | Transformaciones | 5–7 | — |
+| **F05** | Editorial Verde + Imagen | Minimalismo | Conceptos fuertes | 5–7 | — |
+| **F06** | Un Tema, Un Retrato | Coaching | Transformaciones personales | 5–7 | — |
+| **F07** | Libreta Editorial | Creatividad | Rituales, intimidad | 5–7 | — |
+| **F08** | Carpeta + Post-it | Educativo lindo | Pasos, hábitos | 5–7 | — |
+| **F09** | Starter Pack | Meme/Colección | Conceptos visuales | 5–7 | — |
+| **F10** | Ficha de Dato | Educativo | Números, frecuencias | 5–7 | — |
+| **F11** | Historia en Serif | Histórico | Orígenes verificados | 5–7 | — |
+| **F12** | Storytime en Vivo | 620K likes (28 slides) | Historias personales | 10–15 | — |
+| **F13** | Chat con la Amiga | Conversación ilustrativa | Diálogos sobre rituales | 6–10 | — |
 
 ## Formatos en Espera
 

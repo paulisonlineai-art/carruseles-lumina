@@ -1,10 +1,11 @@
-"""Renderer oficial de carruseles Lumina / @valu.manifiesta (modelo aprobado 19/11/2026 → 2026-11-20 formatos).
+"""Renderer oficial de carruseles Lumina / @valu.manifiesta (modelo aprobado 19/11/2026 → 2026-11-20 formatos F01-F13).
 Portada = foto de Valu CENTRADA con la cara libre (usa valu/caras.json; texto debajo del mentón, y≈830–910). Resto = fotos de apoyo tipo Pinterest (texto centrado, y=540).
 Uso: python3 carrusel.py spec.json carpeta_salida
-Formato: "formato": "F01" (por defecto) | "F02" | ... | "F11"
+Formato: "formato": "F01" (por defecto) | "F02" | ... | "F13"
 Estilos: "estilo": "dump" para photo dump (texto chico, foto sin oscurecer), otros estilos por formato.
 spec.json = [{"foto": "/ruta/valu-03.jpg", "portada": true, "texto": "5 cosas que...", "sub": "(guárdalo)", "formato": "F01"},
-             {"foto": "/ruta/vaso-de-agua.jpg", "texto": "1. sirvo un vaso de agua", "sub": "apenas me levanto", "formato": "F01"}, ...]
+             {"foto": "/ruta/vaso-de-agua.jpg", "texto": "1. sirvo un vaso de agua", "sub": "apenas me levanto", "formato": "F01"},
+             {"foto": "/ruta/story.jpg", "cuerpo": ["amigas…", "llevo 3 meses pidiendo una señal"], "formato": "F12"}, ...]
 """
 import sys, os, json, random
 from PIL import Image, ImageDraw, ImageFont, ImageStat
@@ -30,6 +31,8 @@ F_DUMP = font_safe(['Inter-Bold.otf', 'Inter-Bold.ttf', 'DejaVuSans-Bold.ttf'], 
 F_CAVEAT = font_safe(['Caveat-Bold.ttf', 'Caveat-Regular.ttf'], 34) or F_MAIN
 F_POPPINS = font_safe(['Poppins-Bold.ttf', 'Poppins-Regular.ttf'], 64) or F_MAIN
 F_CORMORANT = font_safe(['CormorantGaramond-Bold.ttf', 'CormorantGaramond-Regular.ttf'], 56) or F_MAIN
+F_INTER_500 = font_safe(['Inter-Medium.otf', 'Inter-Medium.ttf'], 32) or F_MAIN
+F_INTER_300 = font_safe(['Inter-Regular.otf', 'Inter-Regular.ttf'], 28) or F_SUB
 
 def cover(img, fy=0.5):
     img = img.convert('RGB'); s = S / min(img.size)
@@ -102,11 +105,105 @@ def draw(img, main, sub, cy, fm=None):
     for ln in sl:
         d.text((S/2, y+slh/2), ln, font=F_SUB, fill='white', anchor='mm', stroke_width=4, stroke_fill='black'); y += slh
 
+def render_F12_storytime(spec_slide, img, i):
+    """F12: Storytime en tiempo real con cajas grises de texto apiladas."""
+    img = cover(img, 0.5)
+    img = Image.alpha_composite(img.convert('RGBA'), Image.new('RGBA', (S, S), (0, 0, 0, 20))).convert('RGB')
+
+    d = ImageDraw.Draw(img)
+
+    cuerpo = spec_slide.get('cuerpo', [])
+    if not cuerpo:
+        cuerpo = [spec_slide.get('texto', '')]
+
+    # Cajas grises apiladas (3–4 por slide)
+    caja_h = 60
+    total_h = len(cuerpo) * (caja_h + 10)
+    y_start = (S - total_h) // 2
+
+    for linea in cuerpo:
+        # Caja gris translúcida
+        y = y_start
+        d.rectangle([90, y, S - 90, y + caja_h], fill=(60, 60, 60, 184), outline=None)
+
+        # Texto centrado blanco
+        lines = []
+        words = linea.split()
+        current = ''
+        for w in words:
+            test = (current + ' ' + w).strip()
+            if F_INTER_500.getlength(test) <= S - 200:
+                current = test
+            else:
+                if current: lines.append(current)
+                current = w
+        if current: lines.append(current)
+
+        text_y = y + caja_h // 2
+        for line in lines:
+            d.text((S // 2, text_y), line, font=F_INTER_500, fill='white', anchor='mm')
+
+        y_start += caja_h + 10
+
+    return img
+
+def render_F13_chat(spec_slide, img, i):
+    """F13: Chat con la amiga usando burbujas dibujadas con código."""
+    img = cover(img, 0.5)
+    img = Image.alpha_composite(img.convert('RGBA'), Image.new('RGBA', (S, S), (0, 0, 0, 30))).convert('RGB')
+
+    d = ImageDraw.Draw(img)
+
+    burbujas = spec_slide.get('burbujas', [])
+    if not burbujas:
+        burbujas = [{'lado': 'ella', 'texto': spec_slide.get('texto', '')}]
+
+    # Encabezado (nombre + círculo)
+    nombre = spec_slide.get('nombre', 'Sofi 🌙')
+    circle_x, circle_y = 120, 120
+    d.ellipse([circle_x - 20, circle_y - 20, circle_x + 20, circle_y + 20], fill=(142, 108, 240))
+    d.text((circle_x, circle_y), 'S', font=F_INTER_500, fill='white', anchor='mm')
+    d.text((circle_x + 60, circle_y), nombre, font=F_INTER_500, fill='white', anchor='lm')
+
+    # Burbujas apiladas
+    y = 200
+    for burbuja in burbujas[:6]:
+        lado = burbuja.get('lado', 'ella')
+        texto = burbuja.get('texto', '')
+
+        # Color según lado
+        if lado == 'ella':
+            color = (142, 108, 240)  # Lila
+            text_color = 'white'
+            x = S - 150
+            anchor_x = 'mm'
+        else:
+            color = (233, 233, 235)  # Gris claro
+            text_color = 'black'
+            x = 150
+            anchor_x = 'mm'
+
+        # Burbuja (rectángulo con esquinas redondeadas aproximadas)
+        bx, by = x - 70, y
+        bw, bh = 140, 50
+        d.rectangle([bx - 36, by, bx + bw + 36, by + bh], fill=color, outline=None)
+
+        # Texto en la burbuja
+        d.text((x, y + bh // 2), texto, font=F_INTER_300, fill=text_color, anchor='mm')
+
+        y += bh + 15
+
+    return img
+
 def render_format(spec_slide, img, i):
-    """Renderiza un slide según su formato (F01–F11)."""
+    """Renderiza un slide según su formato (F01-F13)."""
     fmt = spec_slide.get('formato', 'F01')
 
-    if fmt in ('F01', 'F02', 'F03', 'F04', 'F06', 'F07', 'F08', 'F09', 'F10', 'F11'):
+    if fmt == 'F12':
+        return render_F12_storytime(spec_slide, img, i)
+    elif fmt == 'F13':
+        return render_F13_chat(spec_slide, img, i)
+    elif fmt in ('F01', 'F02', 'F03', 'F04', 'F06', 'F07', 'F08', 'F09', 'F10', 'F11'):
         # Formatos basados en frase + foto (compatibles con draw)
         if spec_slide.get('portada'):
             img, cy = cover_valu(img, spec_slide['foto']); img = treat(img)

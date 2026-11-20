@@ -6,6 +6,7 @@
   - Cada cuenta lleva uno de cada tipo: LISTA IDENTIFICABLE, PHOTO DUMP y MODELO APROBADO.
 - **Los 6 llevan temas y textos distintos entre sí.** Nunca el mismo carrusel en las dos cuentas.
 - **Formato:** 1080×1080 y 5–7 slides (portada + 4–6).
+- **Excepciones (F12 y F13):** 10–15 slides (Storytime) o 6–10 slides (Chat con la amiga). Ver `formatos/F12-storytime.md` y `formatos/F13-chat-amiga.md`.
 
 ## Regla de CTA (manda sobre todo)
 - **Lumina aparece SOLO en la ÚLTIMA slide.** Va como parte natural de la historia, en primera persona.
@@ -62,6 +63,7 @@ Nada de cero. El título y la descripción modelan un post de referencia concret
   - parejas
   - textos en inglés grandes
 - **Fotos nuevas:** si al mirar la hoja de contacto aparece algo de esto, cambiar la foto y anotarla en "fotos vetadas" de `registro.md`.
+- **F12 y F13 (Storytime y Chat):** fotos sin caras reconocibles (manos, objetos, ventanas, pies, reloj, borrosas). Nunca la cara completa de la protagonista.
 
 ## Texto
 - **Tono:** minúscula, primera persona o "tú" de amiga, frases cortas.
@@ -86,6 +88,8 @@ Los carruseles pueden usar **11 formatos visuales distintos** para medir cuál r
 | **F09** | Starter Pack | Meme/Colección | Conceptos visuales |
 | **F10** | Ficha de Dato | Educativo | Números, frecuencias |
 | **F11** | Historia en Serif | Histórico | Orígenes verificados |
+| **F12** | Storytime en Vivo | Historias personales | 10–15 slides |
+| **F13** | Chat con la Amiga | Diálogos sobre rituales | 6–10 slides |
 
 Ver `formatos/indice.md` para especificación completa de cada uno.
 

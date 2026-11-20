@@ -6,12 +6,19 @@ Documento de evolución y medición del proyecto.
 
 ## Fase 1: Exploración de Formatos (Semanas 1–2 desde 20/11/2026)
 
-**Objetivo:** Probar los 11 formatos visuales (F01–F11) para medir cuál rinde mejor.
+**Objetivo:** Probar los 13 formatos visuales (F01–F13) para medir cuál rinde mejor.
 
 ### Rotación
-- **Cada día:** mínimo 2 formatos nuevos (excepto F01, que es control)
-- **Nunca:** dos carruseles del mismo formato el mismo día
-- **Cada formato:** sale ≥2 veces en las 2 semanas
+
+**F01–F11 (exploración normal):**
+- Cada día: mínimo 2 formatos nuevos (excepto F01, que es control)
+- Nunca: dos carruseles del mismo formato el mismo día
+- Cada formato: sale ≥2 veces en las 2 semanas
+
+**F12 & F13 (prueba intensiva desde día 1):**
+- 1 carrusel diario alternando F12 y F13 (días 1, 3, 5… F12; días 2, 4, 6… F13)
+- Mantener durante 2 semanas (14 carruseles: 7x F12, 7x F13)
+- Medir guardados + compartidos vs control (F01)
 
 ### Métricas a Registrar (en `formatos/registro-formatos.csv`)
 - Vistas a 48h
@@ -40,6 +47,11 @@ Ejemplo:
 - **30%:** Formatos con multiplicador medio (1–2.5×)
 - **10%:** Formatos nuevos en prueba o pausados
 
+### Criterios F12 & F13 (después de 2 semanas)
+- **Superan 1,5×:** pasan a ser fijos (2 por día alternando)
+- **Entre 0,5× y 1,5×:** continúan en rotación normal
+- **Menores 0,5×:** se pausan
+
 ### Pausa
 Formato con multiplicador < 0,5× después de 4+ publicaciones se mueve a `formatos/pausados/`.
 
@@ -60,6 +72,7 @@ Formato con multiplicador < 0,5× después de 4+ publicaciones se mueve a `forma
 
 ## Checklist de Implementación (20/11/2026)
 
+**F01–F11:**
 - [x] Especificaciones F01–F11 creadas
 - [x] `carrusel.py` extendido para soportar formatos
 - [x] `registro-formatos.csv` inicializado
@@ -67,7 +80,13 @@ Formato con multiplicador < 0,5× después de 4+ publicaciones se mueve a `forma
 - [x] Agente actualizado para incluir formato en cada slide
 - [x] `guia/reglas-carrusel.md` actualizada
 - [x] `muestrario.png` generado
-- [ ] Próximas ejecuciones de `/carruseles` van a usar formatos en rotación (F02–F11)
+
+**F12–F13:**
+- [x] Especificaciones F12 (Storytime) y F13 (Chat) creadas
+- [x] `render_F12_storytime()` y `render_F13_chat()` implementadas
+- [x] `carrusel.py` integrado con nuevos formatos
+- [ ] Próxima ejecución: rotación diaria F12/F13 + F01–F11 exploración
+- [ ] Medir multiplicadores después de 2 semanas
 
 ---
 
