@@ -69,13 +69,42 @@ Nada de cero. El título y la descripción modelan un post de referencia concret
   - Tildes y ñ siempre bien. Sin emojis dentro de las slides (la fuente no los dibuja); en el pie de foto sí.
 - **Nada de promesas:** "funciona siempre", "en 24 horas", "te llega el dinero", "él vuelve". El ángulo es hábito, calma, intuición, ritual, amor propio, gratitud, constancia, dormir, claridad.
 
+## Biblioteca de Formatos (desde 20/11/2026)
+
+Los carruseles pueden usar **11 formatos visuales distintos** para medir cuál rinde mejor:
+
+| F | Nombre | Inspiración | Mejor Para |
+|---|--------|---|---|
+| **F01** | Frase Nativa | Control | Referencia (usado en primeros 6) |
+| **F02** | Recordatorio Suave | 2–3M vistas | Consejos empáticos |
+| **F03** | Texto Susurro | 10M+ vistas | Listas cortas, intimidad |
+| **F04** | Amarillo Documental | Autoridad visual | Transformaciones |
+| **F05** | Editorial Verde + Imagen | Minimalismo | Conceptos fuertes |
+| **F06** | Un Tema, Un Retrato | Coaching | Transformaciones personales |
+| **F07** | Libreta Editorial | Creatividad | Rituales, intimidad |
+| **F08** | Carpeta + Post-it | Educativo | Pasos, hábitos |
+| **F09** | Starter Pack | Meme/Colección | Conceptos visuales |
+| **F10** | Ficha de Dato | Educativo | Números, frecuencias |
+| **F11** | Historia en Serif | Histórico | Orígenes verificados |
+
+Ver `formatos/indice.md` para especificación completa de cada uno.
+
+**Rotación (semanas 1–2):** Exploración, cada día mínimo 2 formatos nuevos.  
+**Desde semana 3:** 60% formatos top (por multiplicador), 30% medios, 10% nuevos.
+
+---
+
 ## Render
 ```
 python3 herramientas/carrusel.py spec.json salida/AAAA-MM-DD/VALU-1-lista
 python3 herramientas/hoja.py salida/AAAA-MM-DD/VALU-1-lista salida/AAAA-MM-DD/VALU-1-lista_hoja.jpg
 ```
-- **spec.json:** una lista con un objeto por slide: `{"foto": "fotos/valu/valu-19.jpg", "portada": true, "texto": "...", "sub": "(guárdalo)"}`. En las slides del medio, `"portada": false` (o se omite) y `"estilo": "dump"` si es photo dump. `"sub"` puede ser null.
-- **Lo que hace el script:** la portada centra la cara; las slides normales van con el texto centrado (y≈540); las dump, con el texto abajo (y≈800).
+- **spec.json:** una lista con un objeto por slide. Incluye `"formato": "F01"` (o F02, F03… F11):
+```json
+{"foto": "fotos/valu/valu-19.jpg", "portada": true, "texto": "...", "sub": "(guárdalo)", "formato": "F01"}
+```
+  En las slides del medio, `"portada": false` (o se omite) y `"estilo": "dump"` si es photo dump. `"sub"` puede ser null. Cada slide lleva su `"formato"`.
+- **Lo que hace el script:** elige la plantilla según formato; la portada centra la cara; las slides normales van con el texto centrado (y≈540); las dump, con el texto abajo (y≈800).
 - **Revisión:** abrir (Read) cada hoja de contacto y revisar tildes, legibilidad, cara libre, fotos sin marcas, que Lumina esté solo en la última y que no haya CTA en el medio.
 
 ## Plan B (si TikTok no carga o pide sesión)

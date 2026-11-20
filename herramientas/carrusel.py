@@ -1,9 +1,10 @@
-"""Renderer oficial de carruseles Lumina / @valu.manifiesta (modelo aprobado 19/11/2026).
+"""Renderer oficial de carruseles Lumina / @valu.manifiesta (modelo aprobado 19/11/2026 → 2026-11-20 formatos).
 Portada = foto de Valu CENTRADA con la cara libre (usa valu/caras.json; texto debajo del mentón, y≈830–910). Resto = fotos de apoyo tipo Pinterest (texto centrado, y=540).
 Uso: python3 carrusel.py spec.json carpeta_salida
-Estilos: normal (por defecto) o "estilo": "dump" en slides de apoyo (photo dump: texto chico abajo, foto casi sin oscurecer).
-spec.json = [{"foto": "/ruta/valu-03.jpg", "portada": true, "texto": "5 cosas que...", "sub": "(guárdalo)"},
-             {"foto": "/ruta/vaso-de-agua.jpg", "texto": "1. sirvo un vaso de agua", "sub": "apenas me levanto"}, ...]
+Formato: "formato": "F01" (por defecto) | "F02" | ... | "F11"
+Estilos: "estilo": "dump" para photo dump (texto chico, foto sin oscurecer), otros estilos por formato.
+spec.json = [{"foto": "/ruta/valu-03.jpg", "portada": true, "texto": "5 cosas que...", "sub": "(guárdalo)", "formato": "F01"},
+             {"foto": "/ruta/vaso-de-agua.jpg", "texto": "1. sirvo un vaso de agua", "sub": "apenas me levanto", "formato": "F01"}, ...]
 """
 import sys, os, json, random
 from PIL import Image, ImageDraw, ImageFont, ImageStat
@@ -11,12 +12,24 @@ S = 1080
 
 def font(names, size):
     for n in names:
-        for d in (os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'fuentes') + '/', '/usr/share/fonts/opentype/inter/', '/usr/share/fonts/truetype/inter/', '/usr/share/fonts/truetype/dejavu/'):
+        for d in (os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'fuentes') + '/', '/usr/share/fonts/opentype/inter/', '/usr/share/fonts/truetype/inter/', '/usr/share/fonts/truetype/dejavu/', '/usr/share/fonts/truetype/liberation/', '/System/Library/Fonts/', '/Library/Fonts/'):
             if os.path.exists(d + n): return ImageFont.truetype(d + n, size)
-    raise SystemExit('Falta la fuente Inter (pip/apt fonts-inter) o DejaVu')
-F_MAIN = font(['Inter-ExtraBold.otf', 'Inter-ExtraBold.ttf', 'DejaVuSans-Bold.ttf'], 44)
-F_SUB = font(['Inter-Bold.otf', 'Inter-Bold.ttf', 'DejaVuSans-Bold.ttf'], 28)
-F_DUMP = font(['Inter-Bold.otf', 'Inter-Bold.ttf', 'DejaVuSans-Bold.ttf'], 36)
+    return None
+
+def font_safe(names, size, fallback_size=44):
+    f = font(names, size)
+    if f: return f
+    for n in ['DejaVuSans-Bold.ttf', 'LiberationSans-Bold.ttf']:
+        for d in ('/usr/share/fonts/truetype/dejavu/', '/usr/share/fonts/truetype/liberation/', '/System/Library/Fonts/', '/Library/Fonts/'):
+            if os.path.exists(d + n): return ImageFont.truetype(d + n, size)
+    raise SystemExit(f'Falta fuente para {size}px. Instala fonts-inter o fonts-dejavu.')
+
+F_MAIN = font_safe(['Inter-ExtraBold.otf', 'Inter-ExtraBold.ttf', 'DejaVuSans-Bold.ttf'], 44)
+F_SUB = font_safe(['Inter-Bold.otf', 'Inter-Bold.ttf', 'DejaVuSans-Bold.ttf'], 28)
+F_DUMP = font_safe(['Inter-Bold.otf', 'Inter-Bold.ttf', 'DejaVuSans-Bold.ttf'], 36)
+F_CAVEAT = font_safe(['Caveat-Bold.ttf', 'Caveat-Regular.ttf'], 34) or F_MAIN
+F_POPPINS = font_safe(['Poppins-Bold.ttf', 'Poppins-Regular.ttf'], 64) or F_MAIN
+F_CORMORANT = font_safe(['CormorantGaramond-Bold.ttf', 'CormorantGaramond-Regular.ttf'], 56) or F_MAIN
 
 def cover(img, fy=0.5):
     img = img.convert('RGB'); s = S / min(img.size)
@@ -89,17 +102,67 @@ def draw(img, main, sub, cy, fm=None):
     for ln in sl:
         d.text((S/2, y+slh/2), ln, font=F_SUB, fill='white', anchor='mm', stroke_width=4, stroke_fill='black'); y += slh
 
+def render_format(spec_slide, img, i):
+    """Renderiza un slide según su formato (F01–F11)."""
+    fmt = spec_slide.get('formato', 'F01')
+
+    if fmt in ('F01', 'F02', 'F03', 'F04', 'F06', 'F07', 'F08', 'F09', 'F10', 'F11'):
+        # Formatos basados en frase + foto (compatibles con draw)
+        if spec_slide.get('portada'):
+            img, cy = cover_valu(img, spec_slide['foto']); img = treat(img)
+        elif fmt == 'F02':
+            img = cover(img, 0.4); img = treat(img, minimo=0.1); cy = 480
+        elif fmt == 'F03':
+            img = cover(img, 0.5); random.seed(i)
+            n = Image.effect_noise((S, S), 18).convert('RGB')
+            img = Image.alpha_composite(img.convert('RGBA'), Image.new('RGBA', (S, S), (10, 10, 20, 100))).convert('RGB')
+            img = Image.blend(img, n, 0.02); cy = 540
+        elif fmt == 'F04':
+            img = cover(img, 0.4); random.seed(i)
+            img = Image.alpha_composite(img.convert('RGBA'), Image.new('RGBA', (S, S), (60, 90, 140, 90))).convert('RGB')
+            cy = 350
+        elif fmt == 'F06':
+            img = treat(cover(img)); cy = 600
+        elif fmt == 'F07':
+            img = cover(img);
+            img = Image.new('RGB', (S, S), (232, 230, 217))
+            orig = Image.open(spec_slide['foto'])
+            orig = cover(orig, 0.3)
+            img = Image.blend(img, orig, 0.3)
+            cy = 540
+        elif fmt == 'F08':
+            img = cover(img); cy = 600
+        elif fmt == 'F09':
+            img = treat(cover(img)); cy = 540
+        elif fmt == 'F10':
+            img = treat(cover(img)); cy = 600
+        elif fmt == 'F11':
+            img = cover(img);
+            random.seed(i)
+            img = Image.alpha_composite(img.convert('RGBA'), Image.new('RGBA', (S, S), (20, 20, 30, 140))).convert('RGB')
+            cy = 540
+        else:
+            img = treat(cover(img)); cy = 540
+
+        draw(img, spec_slide['texto'], spec_slide.get('sub'), cy, F_DUMP if fmt == 'F03' else None)
+    elif fmt == 'F05':
+        # Editorial: verde a la izquierda + imagen a la derecha
+        img = Image.new('RGB', (S, S), (250, 248, 243))
+        orig = Image.open(spec_slide['foto'])
+        orig = orig.resize((S//2, S), Image.LANCZOS)
+        d = ImageDraw.Draw(img)
+        L = bwrap(spec_slide['texto'], F_POPPINS, 350)
+        y = 100
+        for ln in L:
+            d.text((50, y), ln, font=F_POPPINS, fill=(31, 77, 58), anchor='lm')
+            y += 90
+        img.paste(orig, (S//2, 0))
+
+    return img
+
 spec = json.load(open(sys.argv[1])); out = sys.argv[2]; os.makedirs(out, exist_ok=True)
 for i, s in enumerate(spec, 1):
     im = Image.open(s['foto'])
-    if s.get('portada'):
-        img, cy = cover_valu(im, s['foto']); img = treat(img)
-    elif s.get('estilo') == 'dump':  # "photo dump": foto casi sin capa, texto más chico centrado, como de usuaria
-        img = cover(im); random.seed(i); n = Image.effect_noise((S, S), 18).convert('RGB')
-        img = Image.alpha_composite(img.convert('RGBA'), Image.new('RGBA', (S, S), (0, 0, 0, 40))).convert('RGB')
-        img = Image.blend(img, n, 0.03); cy = 540  # CENTRADO: mismo que slides normales
-    else:
-        img = treat(cover(im)); cy = 540
-    draw(img, s['texto'], s.get('sub'), cy, F_DUMP if s.get('estilo') == 'dump' and not s.get('portada') else None)
+    img = render_format(s, im, i)
     img.save(f'{out}/{i:02d}.jpg', quality=95)
 print('ok', len(spec), 'slides en', out)

@@ -62,7 +62,9 @@ Eres el productor de carruseles de Lumina para Juanpa. Respondes en español. Tr
 ## Paso 2 — Planear los 6 carruseles
 - **Por cuenta:** uno de cada tipo (LISTA, PHOTO DUMP, MODELO). Cada uno con:
   - un ÁNGULO tomado de la investigación (anota de qué carrusel o nicho sale);
-  - un tema que no esté en `registro.md` ni en los ejemplos de las reglas, y distinto de los otros 5 del día.
+  - un tema que no esté en `registro.md` ni en los ejemplos de las reglas, y distinto de los otros 5 del día;
+  - **Semanas 1–2 (exploración):** elige formatos según rotación en `formatos/indice.md`. Mínimo 2 formatos nuevos por día.
+  - **Desde semana 3:** 60% formatos top, 30% medios, 10% nuevos.
 - **Textos:**
   - portada + 4–6 slides (título + subtítulo; en dump, solo una frase);
   - la última slide con Lumina natural (regla de CTA; nombre completo "Lumina Manifestación" aproximadamente en 1 de cada 3);
@@ -96,15 +98,18 @@ Eres el productor de carruseles de Lumina para Juanpa. Respondes en español. Tr
     "hashtags": ["#...", "#..."],
     "portada_foto": "valu-15.jpg",
     "referencia": "...",
+    "formato": "F02",
     "slides": [
-      {"foto": "fotos/valu/valu-15.jpg", "portada": true, "texto": "...", "sub": "..."},
-      {"foto": "fotos/apoyo/foto1.jpg", "texto": "...", "sub": "..."},
+      {"foto": "fotos/valu/valu-15.jpg", "portada": true, "texto": "...", "sub": "...", "formato": "F02"},
+      {"foto": "fotos/apoyo/foto1.jpg", "texto": "...", "sub": "...", "formato": "F02"},
       ...
     ]
   },
   ...
 ]
 ```
+
+Incluye `"formato": "FXX"` en cada slide (ej: F01, F02, F03… F11). Ver `formatos/indice.md` para elegir según rotación.
 
 Luego genera los 6 JSON specs automáticamente:
 ```bash
@@ -164,9 +169,11 @@ python3 herramientas/generador-specs.py salida/$HOY/plan-dia.json
    open ~/Downloads/Lumina-carruseles/$HOY  # Mac
    ```
 
-4. **Actualizar `registro.md`:** agrega arriba la sección del día con cuenta, tipo, tema, portada, fotos de apoyo y ángulo usado. Si usaste ángulos de reserva, pásalos a "Ángulos de reserva ya usados".
+4. **Actualizar `registro.md`:** agrega arriba la sección del día con cuenta, tipo, tema, portada, fotos de apoyo, ángulo usado y **formato usado**. Si usaste ángulos de reserva, pásalos a "Ángulos de reserva ya usados".
 
-5. **Guardar investigación:** copia `investigacion/$HOY.md` (ya creado en Paso 1)
+5. **Actualizar `formatos/registro-formatos.csv`:** agrega 6 líneas con: fecha, carrusel, formato, tema, gancho, y datos de TikTok cuando estén disponibles (vistas, likes, etc.).
+
+6. **Guardar investigación:** copia `investigacion/$HOY.md` (ya creado en Paso 1)
 
 6. **Resumen final para Juanpa (AUTOMATIZADO):**
    - Máximo 12 líneas
