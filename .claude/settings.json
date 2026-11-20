@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Bash(python3:*)",
+      "Bash(pip3 install --user pillow)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(zip:*)",
+      "Bash(cd:*)",
+      "Bash(ls:*)",
+      "Bash(date:*)",
+      "Bash(open:*)",
+      "mcp__claude-in-chrome"
+    ]
+  }
+}

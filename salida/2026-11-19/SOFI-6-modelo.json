@@ -1,0 +1,33 @@
+[
+  {
+    "foto": "fotos/sofia/sofia-taza-ventana.jpg",
+    "portada": true,
+    "texto": "mi ritual de domingo en 10 minutos para que la semana sea mía",
+    "sub": "(paso a paso)"
+  },
+  {
+    "foto": "fotos/apoyo-sofia/libreta-abierta-cama.jpg",
+    "texto": "1. Me siento con mi libreta y vino o té",
+    "sub": "nada de prisas, solo yo y el momento"
+  },
+  {
+    "foto": "fotos/apoyo-sofia/dos-cafes-mesa.jpg",
+    "texto": "2. Escribo 3 cosas que quiero lograr esta semana",
+    "sub": "claras, pequeñas, alcanzables"
+  },
+  {
+    "foto": "fotos/apoyo-sofia/habitacion-pampas-velas.jpg",
+    "texto": "3. Respiro y visualizo cómo se sienten cumplidas",
+    "sub": "ya está hecho, solo me queda fluir"
+  },
+  {
+    "foto": "fotos/apoyo-sofia/ventana-noche.jpg",
+    "texto": "4. Dejo el domingo atrás y recibo la semana",
+    "sub": "suelta lo que pasó, abraza lo que viene"
+  },
+  {
+    "foto": "fotos/apoyo-sofia/mano-escribiendo-luz.jpg",
+    "texto": "5. Termino con mi tiempo en Lumina",
+    "sub": "528 Hz para anclar la intención que siembré"
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "VALU-4-lista",
+    "tipo": "lista",
+    "tema": "señales de que tu manifestación ya está sucediendo",
+    "titulo": "señales de que tu manifestación ya está sucediendo",
+    "descripcion": "a veces no nos damos cuenta, pero el universo ya está moviendo las piezas. ¿cuántas de estas has sentido? 👇",
+    "hashtags": ["#manifestacion", "#leydeatraccion", "#señalesdeluniverso", "#amorpropio"],
+    "portada_foto": "fotos/valu/valu-02.jpg",
+    "referencia": "jacqui ✨ - señales de que tu manifestación está más cerca",
+    "slides": [
+      {"foto": "fotos/valu/valu-02.jpg", "portada": true, "texto": "señales de que tu manifestación ya está sucediendo", "sub": null},
+      {"foto": "fotos/apoyo/meditando-ventana.jpg", "texto": "1. Viste sincronías que antes ignorabas", "sub": "11:11, 222, números que se repiten"},
+      {"foto": "fotos/apoyo/vaso-de-agua.jpg", "texto": "2. Te llegan oportunidades sin buscarlas", "sub": "una persona, un mensaje, una puerta abierta"},
+      {"foto": "fotos/apoyo/espejo-arco-luz.jpg", "texto": "3. Sentís que algo grande está por llegar", "sub": "una calma extraña antes de la tormenta"},
+      {"foto": "fotos/apoyo/escribiendo-ventana-mar.jpg", "texto": "4. Tu intuición es cada vez más fuerte", "sub": "sabes cosas sin saber por qué las sabes"},
+      {"foto": "fotos/apoyo/estudiando-audifonos.jpg", "texto": "5. Estás en tu versión más tranquila", "sub": "sin forzar, solo observando (última) termino con mis 5 min de 528 Hz en Lumina"}
+    ]
+  },
+  {
+    "id": "VALU-5-dump",
+    "tipo": "photo_dump",
+    "tema": "cosas que hago cuando me siento desconectada de mi intuición",
+    "titulo": "cuando empecé a confiar en mi intuición, cambió todo",
+    "descripcion": "lindas, si te sientes perdida, aquí están las cosas que yo hago para reconectar. ¿cuál empiezas hoy? 🤍",
+    "hashtags": ["#intuicion", "#amorpropio", "#rituales", "#manifestacion"],
+    "portada_foto": "fotos/valu/valu-14.jpg",
+    "referencia": "lilyxthz - Lindas, 10 rituales para cuidar tu salud mental",
+    "slides": [
+      {"foto": "fotos/valu/valu-14.jpg", "portada": true, "texto": "cuando empecé a confiar en mi intuición, cambió todo", "sub": "(photo dump)"},
+      {"foto": "fotos/apoyo/meditando-ventana.jpg", "estilo": "dump", "texto": "cierro los ojos y pregunto qué necesito en este momento"},
+      {"foto": "fotos/apoyo/libreta-escrita-pluma.jpg", "estilo": "dump", "texto": "escribo lo primero que me viene a la mente, sin pensar"},
+      {"foto": "fotos/apoyo/espejo-outfit.jpg", "estilo": "dump", "texto": "escucho ese 'pero...' en mi cabeza y hago lo opuesto"},
+      {"foto": "fotos/apoyo/autocuidado-toalla-velas.jpg", "estilo": "dump", "texto": "respiro profundo y observo sin juzgar mis pensamientos"},
+      {"foto": "fotos/apoyo/libreta-escribiendo-noche.jpg", "estilo": "dump", "texto": "termino el día con gratitud por los signos que vi (última) tengo mis 5 min de 528 Hz en Lumina"}
+    ]
+  },
+  {
+    "id": "VALU-6-modelo",
+    "tipo": "modelo",
+    "tema": "mi ritual de noche en 5 pasos para dormir con calma",
+    "titulo": "mi ritual de noche en 5 pasos para dormir en paz",
+    "descripcion": "lo que cambió mis noches fue este ritual. ahora duermo tan tranquila que casi me cuesta despertarme 😴",
+    "hashtags": ["#ritualdnoche", "#calma", "#sleepgood", "#manifestacion"],
+    "portada_foto": "fotos/valu/valu-05.jpg",
+    "referencia": "chloe🪩 - how to become that girl (noche routine)",
+    "slides": [
+      {"foto": "fotos/valu/valu-05.jpg", "portada": true, "texto": "mi ritual de noche en 5 pasos para dormir en paz", "sub": "(guárdalo)"},
+      {"foto": "fotos/apoyo/estudiando-audifonos.jpg", "texto": "1. Apago el celular 30 min antes", "sub": "la luz azul mata la magia"},
+      {"foto": "fotos/apoyo/autocuidado-toalla-velas.jpg", "texto": "2. Prendo una vela de lavanda", "sub": "mi cerebro asocia olor a descanso"},
+      {"foto": "fotos/apoyo/libreta-escrita-pluma.jpg", "texto": "3. Escribo lo que solté hoy", "sub": "lo que no me llevo a la cama"},
+      {"foto": "fotos/apoyo/meditando-ventana.jpg", "texto": "4. Respiro 4-7-8 (cuatro, reteno, suelto)", "sub": "el sistema nervioso lo necesita"},
+      {"foto": "fotos/apoyo/libretas-cafe-escritorio.jpg", "texto": "5. Escucho Lumina Manifestación antes de dormir", "sub": "la frecuencia 528 Hz es mi llave al sueño"}
+    ]
+  },
+  {
+    "id": "SOFI-4-lista",
+    "tipo": "lista",
+    "tema": "cosas que solo entiende alguien que ve señales del universo",
+    "titulo": "cosas que solo entiende alguien que ve señales todos los días",
+    "descripcion": "la gente me pregunta qué onda con los números. aquí te dejo qué significa verlos siempre 👇",
+    "hashtags": ["#1111", "#señalesdeluniverso", "#manifestacion", "#universo"],
+    "portada_foto": "fotos/sofia/sofia-vaso-agua-selfie.jpg",
+    "referencia": "jacqui ✨ - cosas que solo entiende alguien que está manifestando",
+    "slides": [
+      {"foto": "fotos/sofia/sofia-vaso-agua-selfie.jpg", "portada": true, "texto": "cosas que solo entiende alguien que ve señales todos los días", "sub": null},
+      {"foto": "fotos/apoyo-sofia/mano-celular.jpg", "texto": "1. Mirar la hora y que sea 11:11, 222, 333", "sub": "no es coincidencia, es confirmación"},
+      {"foto": "fotos/apoyo-sofia/libreta-negra-lapices.jpg", "texto": "2. Recibir un mensaje cuando justo lo necesitas", "sub": "y la persona dice 'no sé por qué te escribí'"},
+      {"foto": "fotos/apoyo-sofia/vaso-agua-azul.jpg", "texto": "3. Que alguien diga lo que vos estabas pensando", "sub": "la sincronía existe y es hermosa"},
+      {"foto": "fotos/apoyo-sofia/vaso-agua-ventana.jpg", "texto": "4. Escuchar una canción y sentir que es para vos", "sub": "la letra, el momento, todo encaja"},
+      {"foto": "fotos/apoyo-sofia/lampara-noche-cama.jpg", "texto": "5. Creer en las señales y que todo te confirme que ya llegó", "sub": "(última) mi frecuencia de 528 Hz en Lumina cada vez que las veo"}
+    ]
+  },
+  {
+    "id": "SOFI-5-dump",
+    "tipo": "photo_dump",
+    "tema": "lo que cambié en mi cuarto para sentirme en paz",
+    "titulo": "lo que cambié en mi cuarto y cómo cambió todo",
+    "descripcion": "tu espacio es tu energía. aquí está lo que yo cambié para que mi cuarto fuera mi santuario 🤍",
+    "hashtags": ["#cuarto", "#energía", "#paz", "#amorpropio"],
+    "portada_foto": "fotos/sofia/sofia-sueter-ventana.jpg",
+    "referencia": "herioliveira_ - Uno vive mejor así",
+    "slides": [
+      {"foto": "fotos/sofia/sofia-sueter-ventana.jpg", "portada": true, "texto": "lo que cambié en mi cuarto y cómo cambió todo", "sub": "(photo dump)"},
+      {"foto": "fotos/apoyo-sofia/habitacion-pampas-velas.jpg", "estilo": "dump", "texto": "saqué el escritorio del medio (el trabajo y el descanso no son amigos)"},
+      {"foto": "fotos/apoyo-sofia/lampara-noche-cama.jpg", "estilo": "dump", "texto": "puse lámparas de luz cálida (adiós luz fría y artificial)"},
+      {"foto": "fotos/apoyo-sofia/libreta-abierta-cama.jpg", "estilo": "dump", "texto": "puse plantas en cada rincón (la naturaleza respira conmigo)"},
+      {"foto": "fotos/apoyo-sofia/vaso-agua-ventana.jpg", "estilo": "dump", "texto": "dejé la ventana siempre visible (la conexión con el exterior)"},
+      {"foto": "fotos/apoyo-sofia/mano-vaso-mesa.jpg", "estilo": "dump", "texto": "hice un rinconcito con mis velas, libretas y agua (última) ahora mi cuarto es Lumina Manifestación para mí"}
+    ]
+  },
+  {
+    "id": "SOFI-6-modelo",
+    "tipo": "modelo",
+    "tema": "mi ritual de domingo de 10 minutos para alinear la semana",
+    "titulo": "mi ritual de domingo en 10 minutos para que la semana sea mía",
+    "descripcion": "lindas, esto es lo que hago el domingo para que los 7 días que vienen fluyan sin estrés. pruébalo y cuéntame qué cambió 🤍",
+    "hashtags": ["#domingo", "#ritualsemanal", "#alineacion", "#manifestacion"],
+    "portada_foto": "fotos/sofia/sofia-taza-ventana.jpg",
+    "referencia": "helen - Pequeños hábitos que puedes hacer el domingo",
+    "slides": [
+      {"foto": "fotos/sofia/sofia-taza-ventana.jpg", "portada": true, "texto": "mi ritual de domingo en 10 minutos para que la semana sea mía", "sub": "(paso a paso)"},
+      {"foto": "fotos/apoyo-sofia/libreta-abierta-cama.jpg", "texto": "1. Me siento con mi libreta y vino o té", "sub": "nada de prisas, solo yo y el momento"},
+      {"foto": "fotos/apoyo-sofia/dos-cafes-mesa.jpg", "texto": "2. Escribo 3 cosas que quiero lograr esta semana", "sub": "claras, pequeñas, alcanzables"},
+      {"foto": "fotos/apoyo-sofia/habitacion-pampas-velas.jpg", "texto": "3. Respiro y visualizo cómo se sienten cumplidas", "sub": "ya está hecho, solo me queda fluir"},
+      {"foto": "fotos/apoyo-sofia/ventana-noche.jpg", "texto": "4. Dejo el domingo atrás y recibo la semana", "sub": "suelta lo que pasó, abraza lo que viene"},
+      {"foto": "fotos/apoyo-sofia/mano-escribiendo-luz.jpg", "texto": "5. Termino con mi tiempo en Lumina", "sub": "528 Hz para anclar la intención que siembré"}
+    ]
+  }
+]

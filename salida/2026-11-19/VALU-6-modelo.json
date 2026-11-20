@@ -1,0 +1,33 @@
+[
+  {
+    "foto": "fotos/valu/valu-05.jpg",
+    "portada": true,
+    "texto": "mi ritual de noche en 5 pasos para dormir en paz",
+    "sub": "(guárdalo)"
+  },
+  {
+    "foto": "fotos/apoyo/estudiando-audifonos.jpg",
+    "texto": "1. Apago el celular 30 min antes",
+    "sub": "la luz azul mata la magia"
+  },
+  {
+    "foto": "fotos/apoyo/autocuidado-toalla-velas.jpg",
+    "texto": "2. Prendo una vela de lavanda",
+    "sub": "mi cerebro asocia olor a descanso"
+  },
+  {
+    "foto": "fotos/apoyo/libreta-escrita-pluma.jpg",
+    "texto": "3. Escribo lo que solté hoy",
+    "sub": "lo que no me llevo a la cama"
+  },
+  {
+    "foto": "fotos/apoyo/meditando-ventana.jpg",
+    "texto": "4. Respiro 4-7-8 (cuatro, reteno, suelto)",
+    "sub": "el sistema nervioso lo necesita"
+  },
+  {
+    "foto": "fotos/apoyo/libretas-cafe-escritorio.jpg",
+    "texto": "5. Escucho Lumina Manifestación antes de dormir",
+    "sub": "la frecuencia 528 Hz es mi llave al sueño"
+  }
+]

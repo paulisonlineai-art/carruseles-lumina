@@ -1,0 +1,33 @@
+[
+  {
+    "foto": "fotos/sofia/sofia-sueter-ventana.jpg",
+    "portada": true,
+    "texto": "lo que cambié en mi cuarto y cómo cambió todo",
+    "sub": "(photo dump)"
+  },
+  {
+    "foto": "fotos/apoyo-sofia/habitacion-pampas-velas.jpg",
+    "estilo": "dump",
+    "texto": "saqué el escritorio del medio (el trabajo y el descanso no son amigos)"
+  },
+  {
+    "foto": "fotos/apoyo-sofia/lampara-noche-cama.jpg",
+    "estilo": "dump",
+    "texto": "puse lámparas de luz cálida (adiós luz fría y artificial)"
+  },
+  {
+    "foto": "fotos/apoyo-sofia/libreta-abierta-cama.jpg",
+    "estilo": "dump",
+    "texto": "puse plantas en cada rincón (la naturaleza respira conmigo)"
+  },
+  {
+    "foto": "fotos/apoyo-sofia/vaso-agua-ventana.jpg",
+    "estilo": "dump",
+    "texto": "dejé la ventana siempre visible (la conexión con el exterior)"
+  },
+  {
+    "foto": "fotos/apoyo-sofia/mano-vaso-mesa.jpg",
+    "estilo": "dump",
+    "texto": "hice un rinconcito con mis velas, libretas y agua (última) ahora mi cuarto es Lumina Manifestación para mí"
+  }
+]
